@@ -11,7 +11,7 @@ import re
 API_ID = os.environ.get("API_ID", "10581465") 
 API_HASH = os.environ.get("API_HASH", "9494a2ca550339e41a37556344e5c60e") 
 SESSION_NAME = os.environ.get("SESSION_NAME", "BQCvV04nu5HRY3540gibm9HDiq0NOOr-eB1AYC3Q_qjq9GfbVvmftUrZhmNonxOUdYMpjGT4uymzMGP3kggYyFhyHPSTwDs6BYVwyGEjLFMOvHb0_nxlzpOg2P226J_A99YOO9_Rx9PgbgQZNDIKuEbNcdtceQqs30nc_jAxa6wvf7nQSwnjH2yxGiHuudh0WupQPXx2UWqvb8W_GC7XcNz9bNftWOMjZBVwBi97irbLaLiY_p_iOWBhk49uznbnRjGXr49cjLuArMLcfXC4j4ftcDEqfClz0fD-eQBKoXz65m_XqtvbsiUp3hdKVKFKgM7Xef0Q8Q94k2cAltZ4PiVyAAAAAUo-2WIA")
-MONGO_URL = os.environ.get("MONGO_URL", "mongodb+srv://kyymusic:AsampeZ12@cluster0.74fjn.mongodb.net/test?retryWrites=true&w=majority")
+MONGO_URL = os.environ.get("MONGO_URL", "mongodb+srv://zewdatabase:ijoXgdmQ0NCyg9DO@zewgame.urb3i.mongodb.net/ontap?retryWrites=true&w=majority")
 
 bot = Client(
     session_name = SESSION_NAME,
