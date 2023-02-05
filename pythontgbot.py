@@ -23,7 +23,7 @@ from telegram import Chat, ChatMember, Update, User
 from functools import wraps
 
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None) 
-MONGO_URL = os.environ.get("BOT_TOKEN", None) 
+MONGO_URL = os.environ.get("MONGO_URL", "mongodb+srv://zewdatabase:ijoXgdmQ0NCyg9DO@zewgame.urb3i.mongodb.net/ontap?retryWrites=true&w=majority") 
 
 USERS_GROUP = 11
 
