@@ -58,7 +58,6 @@ async def log_user(update: Update, context: ContextTypes.DEFAULT_TYPE):
        is_chat = vick.find({"chat":chat.id, "word": message.text})                 
        for x in is_chat:
            K.append(x['text'])
-       if K:
            hey = random.choice(K)
            is_text = vick.find_one({"chat":chat.id, "text": hey})
            Yo = is_text['check']
@@ -76,8 +75,7 @@ async def log_user(update: Update, context: ContextTypes.DEFAULT_TYPE):
            K = []  
            is_chat = vick.find({"chat":chat.id, "word": message.text})                 
            for x in is_chat:
-               K.append(x['text'])
-           if K:
+               K.append(x['text'])           
                hey = random.choice(K)
                is_text = vick.find_one({"chat":chat.id, "text": hey})
                Yo = is_text['check']
