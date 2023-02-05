@@ -1,4 +1,5 @@
 
+
 from pymongo import MongoClient
 import requests
 import random
@@ -54,12 +55,12 @@ async def log_user(update: Update, context: ContextTypes.DEFAULT_TYPE):
    vick = vickdb["VickDb"]["Vick"]
    if not message.reply_to_message:
        K = []  
-       is_chat = chatai.find({"chat":chat.id, "word": message.text})                 
+       is_chat = vick.find({"chat":chat.id, "word": message.text})                 
        for x in is_chat:
            K.append(x['text'])
        if K:
            hey = random.choice(K)
-           is_text = chatai.find_one({"chat":chat.id, "text": hey})
+           is_text = vick.find_one({"chat":chat.id, "text": hey})
            Yo = is_text['check']
 # send criteria
        if Yo == "sticker":
@@ -73,12 +74,12 @@ async def log_user(update: Update, context: ContextTypes.DEFAULT_TYPE):
    if message.reply_to_message:                   
        if message.reply_to_message.from_user.id == BOT_ID:                    
            K = []  
-           is_chat = chatai.find({"chat":chat.id, "word": message.text})                 
+           is_chat = vick.find({"chat":chat.id, "word": message.text})                 
            for x in is_chat:
                K.append(x['text'])
            if K:
                hey = random.choice(K)
-               is_text = chatai.find_one({"chat":chat.id, "text": hey})
+               is_text = vick.find_one({"chat":chat.id, "text": hey})
                Yo = is_text['check']
 # mesz check
            if Yo == "sticker":
@@ -92,13 +93,13 @@ async def log_user(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
        if not message.reply_to_message.from_user.id == BOT_ID:          
            if message.sticker:
-               is_chat = chatai.find_one({"chat":chat.id, "word": message.reply_to_message.text, "id": message.sticker.file_unique_id})
+               is_chat = vick.find_one({"chat":chat.id, "word": message.reply_to_message.text, "id": message.sticker.file_unique_id})
                if not is_chat:
-                   chatai.insert_one({"chat":chat.id, "word": message.reply_to_message.text, "text": message.sticker.file_id, "check": "sticker", "id": message.sticker.file_unique_id})
+                   vick.insert_one({"chat":chat.id, "word": message.reply_to_message.text, "text": message.sticker.file_id, "check": "sticker", "id": message.sticker.file_unique_id})
            if message.text:                 
-               is_chat = chatai.find_one({"chat":chat.id, "word": message.reply_to_message.text, "text": message.text})                 
+               is_chat = vick.find_one({"chat":chat.id, "word": message.reply_to_message.text, "text": message.text})                 
                if not is_chat:
-                   chatai.insert_one({"chat":chat.id, "word": message.reply_to_message.text, "text": message.text, "check": "none"})
+                   vick.insert_one({"chat":chat.id, "word": message.reply_to_message.text, "text": message.text, "check": "none"})
 
 
 
