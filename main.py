@@ -146,15 +146,15 @@ def vickai(client: Client, message: Message):
                is_text = chatai.find_one({"text": hey})
                Yo = is_text['check']
                if Yo == "text":
-                   await message.reply_text(f"{hey}")
+                   message.reply_text(f"{hey}")
                if not Yo == "text":
-                   await message.reply_sticker(f"{hey}")
+                   message.reply_sticker(f"{hey}")
    
    if message.reply_to_message:
        vickdb = MongoClient(MONGO_URL)
        vick = vickdb["VickDb"]["Vick"] 
        is_vick = vick.find_one({"chat_id": message.chat.id})
-       getme = await bot.get_me()
+       getme = bot.get_me()
        bot_id = getme.id
        if message.reply_to_message.from_user.id == bot_id: 
            if not is_vick:                    
@@ -169,9 +169,9 @@ def vickai(client: Client, message: Message):
                    is_text = chatai.find_one({"text": hey})
                    Yo = is_text['check']
                    if Yo == "text":
-                       await message.reply_text(f"{hey}")
+                       message.reply_text(f"{hey}")
                    if not Yo == "text":
-                       await message.reply_sticker(f"{hey}")
+                       message.reply_sticker(f"{hey}")
        if not message.reply_to_message.from_user.id == bot_id:          
            if message.text:
                is_chat = chatai.find_one({"word": message.reply_to_message.sticker.file_unique_id, "text": message.text})
