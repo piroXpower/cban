@@ -2,6 +2,5 @@ requests
 motor
 pymongo[src]
 dnspython
-aiohttp==3.8.1
 pyrogram==1.4.16
 tgcrypto==1.2.2
