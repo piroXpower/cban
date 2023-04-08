@@ -158,7 +158,7 @@ def vickai(client: Client, message: Message):
        bot_id = getme.id
        if message.reply_to_message.from_user.id == bot_id: 
            if not is_vick:                    
-               await bot.send_chat_action(message.chat.id, "typing")
+               bot.send_chat_action(message.chat.id, "typing")
                K = []  
                is_chat = chatai.find({"word": message.text})
                k = chatai.find_one({"word": message.text})      
