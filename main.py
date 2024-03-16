@@ -14,9 +14,10 @@ SESSION_NAME = os.environ.get("SESSION_NAME", "")
 MONGO_URL = os.environ.get("MONGO_URL", "mongodb+srv://zewdatabase:ijoXgdmQ0NCyg9DO@zewgame.urb3i.mongodb.net/ontap?retryWrites=true&w=majority")
 
 bot = Client(
-    session_name = SESSION_NAME,
+    name="PYRO_CLIENT",
     api_id = API_ID,
-    api_hash = API_HASH
+    api_hash = API_HASH,
+    session_string = SESSION_NAME,     
 )
 
 def is_admins(chat_id: int):
